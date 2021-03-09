@@ -1,0 +1,15 @@
+<ul class="nav flex-column">
+  <li class="nav-item" *ngFor="let user of usersData">
+    <a [routerLink]="['/users', 1, user]" [queryParams]="{ page: 1, search: user }"
+    class="nav-link">Get {{user | shorten:3}}
+      Details</a>
+  </li>
+
+</ul>
+
+<div>
+  <button type="button" (click)="onUserAddedClick()">User Added</button>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
